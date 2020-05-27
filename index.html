@@ -1,0 +1,100 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+
+    <style>
+        button{
+            position: relative;
+            height: 70px;
+            width: 70px;
+            font-size: 30px;
+            background-color: #0000;
+            border-color: #00c3ff;
+            font-weight: 800;;
+            font-family: NSimSun;
+
+        }
+        #output{
+            width:300px;
+            height:50px;
+            font-size: 32px;
+            font-weight:400;
+        }
+        .equal-button{
+            height:150px;
+        }
+        body{
+            margin-top: 130px;
+            margin-left: 500px;
+            background: linear-gradient(to right,#009fff, #ffb300);
+            height:100;
+            font-family: NSimSun;
+
+        }
+    </style>
+</head>
+<body>
+    <script>
+        var text = document.getElementById('output');
+        text.addEventListener("keyup",
+        function(event){
+            if(event.keyCode===13){
+                event.preventDefault();
+                document.getElementById('equal').click();
+            }
+
+        });
+        function add(num){
+            document.form.output.value+=num;
+        }
+        function clean(){
+            document.form.output.value=""; 
+        }
+        function equal(){
+            var exp= document.form.output.value;
+            if(exp){
+            document.form.output.value= eval(document.form.output.value);
+            }
+        }
+        function backspace(){
+            var exp= document.form.output.value;
+            document.form.output.value=exp.substring(0,exp.length-1);
+        }
+    </script>
+    <form name="form">
+        <input name="output" id="output" >
+    </form>
+    <table>
+        <tr>
+            <td><button onclick="clean()">C</button></td>
+            <td><button onclick="backspace()">CE</button></td>
+            <td><button onclick="add('/')">/</button></td>
+            <td><button onclick="add('*')">*</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="add(7)">7</button></td>
+            <td><button onclick="add(8)">8</button></td>
+            <td><button onclick="add(9)">9</button></td>
+            <td><button onclick="add('-')">-</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="add(4)">4</button></td>
+            <td><button onclick="add(5)">5</button></td>
+            <td><button onclick="add(6)">6</button></td>
+            <td><button onclick="add('+')">+</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="add(1)">1</button></td>
+            <td><button onclick="add(2)">2</button></td>
+            <td><button onclick="add(3)">3</button></td>
+            <td rowspan=5 ><button class="equal-button" id="equal" onclick="equal()">=</button></td>
+        </tr>
+        <tr>
+            <td colspan=2 onclick="add(0)"><button style="width:150px">0</button></td>
+            <td><button onclick="add('.')">.</button></td>
+        </tr>
+    </table>
+</body>
+</html>
