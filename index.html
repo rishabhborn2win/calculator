@@ -16,6 +16,11 @@
 
         }
         #output{
+            border-radius:5px;
+            background-color:black;
+            color:white;
+            border:solid 1px black;
+            align: center;
             width:300px;
             height:50px;
             font-size: 32px;
@@ -66,9 +71,11 @@
             document.form.output.value=exp.substring(0,exp.length-1);
         }
     </script>
+    <center>
     <form name="form">
         <input name="output" id="output" >
     </form>
+    </center>
     <table>
         <tr>
             <td><button onclick="clean()">C</button></td>
