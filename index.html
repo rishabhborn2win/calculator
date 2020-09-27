@@ -42,43 +42,12 @@
             font-family: NSimSun;
 
         }
-        tr{
-            height:auto;
-        }
-        .calc{
-            border: 2px solid black;
-        }
+      
+       
       
     </style>
 </head>
 <body>
-    <script>
-        var text = document.getElementById('output');
-        text.addEventListener("keyup",
-        function(event){
-            if(event.keyCode===13){
-                event.preventDefault();
-                document.getElementById('equal').click();
-            }
-
-        });
-        function add(num){
-            document.form.output.value+=num;
-        }
-        function clean(){
-            document.form.output.value=""; 
-        }
-        function equal(){
-            var exp= document.form.output.value;
-            if(exp){
-            document.form.output.value= eval(document.form.output.value);
-            }
-        }
-        function backspace(){
-            var exp= document.form.output.value;
-            document.form.output.value=exp.substring(0,exp.length-1);
-        }
-    </script>
     <center>
     <form name="form">
         <input name="output" id="output" >
@@ -116,5 +85,36 @@
         </tr>
     </table>
     </div>
+    <script>
+        var text = document.getElementById('output');
+        text.addEventListener("keyup",
+        function(event){
+            if(event.keyCode===13){
+                event.preventDefault();
+                document.getElementById('equal').click();
+            }
+            if(event.keyCode===107){
+                event.preventDefault();
+                document.form.output.value += '+';
+            }
+
+        });
+        function add(num){
+            document.form.output.value+=num;
+        }
+        function clean(){
+            document.form.output.value=""; 
+        }
+        function equal(){
+            var exp= document.form.output.value;
+            if(exp){
+            document.form.output.value= eval(document.form.output.value);
+            }
+        }
+        function backspace(){
+            var exp= document.form.output.value;
+            document.form.output.value=exp.substring(0,exp.length-1);
+        }
+    </script>
 </body>
 </html>
