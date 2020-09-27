@@ -86,22 +86,13 @@
     </table>
     </div>
     <script>
-        var text = document.getElementById('output');
-        text.addEventListener("keyup",
-        function(event){
-            if(event.keyCode===13){
-                event.preventDefault();
-                document.getElementById('equal').click();
-            }
-            if(event.keyCode===107){
-           
-                add("+");
-            }
-            if(event.keyCode===8){
-                backspace();
-            }
+      document.addEventListener('keypress', logKey);
 
-        });
+function logKey(e) {
+  if(e.code=="BracketRight"){
+      backspace();
+  }
+}
         function add(num){
             document.form.output.value+=num;
         }
