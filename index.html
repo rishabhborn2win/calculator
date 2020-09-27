@@ -94,8 +94,11 @@
                 document.getElementById('equal').click();
             }
             if(event.keyCode===107){
-                event.preventDefault();
-                document.form.output.value += '+';
+           
+                add("+");
+            }
+            if(event.keyCode===8){
+                backspace();
             }
 
         });
