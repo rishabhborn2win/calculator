@@ -4,7 +4,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator</title>
     <script src= "https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"> </script>
-    <script src= "keyboard-link.js"> </script>
     <style>
         button{
             height: 70px;
@@ -104,6 +103,63 @@
             document.form.output.value=exp.substring(0,exp.length-1);
         }
 
+//         adding the working with keyboard feature
+        
+                var body=document.querySelector("body");
+     body.addEventListener('keydown', function(event) { 
+            const key = event.key; 
+            if (key === "Backspace" || key === "Delete") { 
+                backspace();
+            } 
+         if (key === "Enter") { 
+                equal();
+            } 
+         if (key === '1') { 
+                add(1);
+            } 
+         if (key === '2') { 
+                add(2);
+            }
+         if (key === '3') { 
+                add(3);
+            }
+         if (key === '4') { 
+                add(4);
+            }
+         if (key === '5') { 
+                add(5);
+            }
+         if (key === '6') { 
+                add(6);
+            }
+         if (key === '7') { 
+                add(7);
+            }
+         if (key === '8') { 
+                add(8);
+            }
+         if (key === '9') { 
+                add(9);
+            }
+         if (key === '0') { 
+                add(0);
+            }
+         if (key === '+') { 
+                add('+');
+            }
+         if (key === '-') { 
+                add('-');
+            }
+         if (key === '*') { 
+                add('*');
+            }
+         if (key === '/') { 
+                add('/');
+            }
+         if (key === '.') { 
+                add('.');
+            }
+        });
     </script>
 </body>
 </html>
